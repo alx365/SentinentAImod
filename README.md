@@ -1,2 +1,2 @@
 # SentinetAImod
-Sentiment AI Minecraft Mod
+Sentinent AI Minecraft Mod
