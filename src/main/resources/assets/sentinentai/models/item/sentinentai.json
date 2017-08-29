@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "sentinentai:items/firmware"
+        "layer0": "sentinentai:items/sentinentai"
     },
     "display": {
         "thirdperson": {
