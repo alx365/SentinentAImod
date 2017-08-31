@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "sentinentai:items/spawn"
+        "layer0": "sentinentai:items/spawnegg"
     },
     "display": {
         "thirdperson": {

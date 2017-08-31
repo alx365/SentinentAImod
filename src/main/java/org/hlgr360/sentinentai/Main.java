@@ -6,6 +6,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -20,7 +21,7 @@ public class Main {
 
 	public static Item sentinentAItem;	
 	public static Item bodyKitItem;
-	public static Item elizaSpawnEgg;
+	public static Item coreItemEgg;
 
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
@@ -36,14 +37,16 @@ public class Main {
 		ModelResourceLocation bodyKitItemModel = new ModelResourceLocation("sentinentai:bodykit", "inventory"); 
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(bodyKitItem, 0, bodyKitItemModel);		
 
-		elizaSpawnEgg = new ElizaSpawn().setRegistryName(MODID, "elizaspawn");
-		GameRegistry.register(elizaSpawnEgg);
+		coreItemEgg = new CoreItemEgg().setRegistryName(MODID, "coreitemegg");
+		GameRegistry.register(coreItemEgg);
 		
-		ModelResourceLocation elizaSpawnEggModel = new ModelResourceLocation("sentinentai:elizaspawn", "inventory"); 
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(elizaSpawnEgg, 0, elizaSpawnEggModel);		
+		ModelResourceLocation coreItemEggModel = new ModelResourceLocation("sentinentai:coreitemegg", "inventory"); 
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(coreItemEgg, 0, coreItemEggModel);		
 		
+		EntityRegistry.registerModEntity(new ResourceLocation(MODID,"corentity"), CoreEntity.class, "coreentity", 1, this, 80, 3, true);
+
 		GameRegistry.addRecipe(
-				new ItemStack(elizaSpawnEgg),
+				new ItemStack(coreItemEgg),
 				" s ",
 				" r ",
 				" b ",
